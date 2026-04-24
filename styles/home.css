@@ -1,0 +1,152 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background-image: url("../images/30e8098f-3634-400a-b1d8-917ace0766ec.png");
+    background-size: cover;
+    background-position: center;
+    
+    /* Make height flexible instead of fixed vh */
+    min-height: 100%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    color: white;
+    text-align: center;
+    
+    overflow-x: hidden;
+    overflow-y: auto; /* allow scrolling if content exceeds viewport */
+}
+
+/* overlay should cover the full content including scroll */
+.overlay {
+    position: fixed; /* use fixed instead of absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10,0,40,0.6), rgba(0,0,0,0.9));
+    z-index: -1;
+}
+
+.container {
+    /* remove margin-top:60px; optional, use padding for spacing */
+    padding-top: 60px;
+    padding-bottom: 60px; /* give space at the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo title */
+.logo-title{
+font-size:70px;
+color:#ff5cff;
+letter-spacing:6px;
+filter: drop-shadow(0 0 10px #ff5cff) drop-shadow(0 0 25px #ff5cff);
+}
+
+/* Subtitle */
+.subtitle{
+margin-top:10px;
+font-size:18px;
+letter-spacing:2px;
+opacity:0.9;
+}
+
+/* Teaser */
+.teaser{
+margin-top:40px;
+}
+.teaser img{
+width:260px;
+max-width:80%;
+border-radius:10px;
+box-shadow:0 0 20px #ff5cff;
+}
+.teaser-text{
+margin-top:12px;
+font-size:16px;
+letter-spacing:2px;
+opacity:0.8;
+}
+
+/* Sections */
+.sections{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+padding:20px;
+width:100%;
+max-width:900px;
+}
+
+.card{
+border:1px solid rgba(255,255,255,0.2);
+padding:25px;
+border-radius:10px;
+font-size:18px;
+transition:0.3s;
+}
+.card span{
+display:block;
+margin-top:8px;
+font-size:14px;
+opacity:0.7;
+}
+.card:hover{
+border-color:#ff5cff;
+box-shadow:0 0 15px #ff5cff;
+transform:scale(1.05);
+}
+
+/* Socials */
+.socials{
+margin-top:40px;
+display:flex;
+gap:25px;
+justify-content:center;
+font-size:24px;
+}
+.socials a{
+color:white;
+transition:0.3s;
+}
+.socials a:hover{
+color:#ff5cff;
+transform:scale(1.2);
+}
+
+/* Footer */
+footer{
+font-size:12px;
+margin-bottom:15px;
+opacity:0.6;
+}
+
+/* Mobile */
+@media(max-width:600px){
+.logo-title{
+font-size:48px;
+}
+.subtitle{
+font-size:16px;
+}
+.teaser img{
+width:180px;
+}
+.card{
+padding:15px;
+font-size:16px;
+}
+}      
